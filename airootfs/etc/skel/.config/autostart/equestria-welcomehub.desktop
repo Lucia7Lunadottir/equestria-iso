@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Equestria OS Welcome Hub
+Exec=pg-welcomehub
+Icon=equestria-os
+X-GNOME-Autostart-enabled=true
+Hidden=false

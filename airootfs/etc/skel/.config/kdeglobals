@@ -1,0 +1,12 @@
+[KDE]
+LookAndFeelPackage=EquestriaOS-Splash
+
+
+[WM]
+activeBackground=222,224,226
+activeBlend=222,224,226
+activeFont=Equestria_Cyrillic,13,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
+activeForeground=35,38,41
+inactiveBackground=222,224,226
+inactiveBlend=222,224,226
+inactiveForeground=35,38,41

@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=Equestria OS Wallpaper
+Exec=bash -c "plasma-apply-wallpaperimage /usr/share/wallpapers/EquestriaOS/default.png && kwriteconfig6 --file kscreenlockerrc --group Greeter --group Wallpaper --group org.kde.image --group General --key Image 'file:///usr/share/wallpapers/EquestriaOS/default.png' && rm ~/.config/autostart/eq-wallpaper.desktop"
+Hidden=false
+X-GNOME-Autostart-enabled=true

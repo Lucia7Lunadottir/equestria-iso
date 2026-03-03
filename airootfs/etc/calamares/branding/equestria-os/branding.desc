@@ -1,0 +1,47 @@
+componentName: equestria-os
+
+welcomeStyleCalamares: false
+
+welcomeExpandingLogo: false
+
+# windowExpanding: normal
+windowExpanding: noexpand
+
+windowSize: 1215px,715px
+
+windowPlacement: center
+
+sidebar: widget
+
+navigation: widget
+
+strings:
+    productName:         Equestria OS
+    shortProductName:    Equestria OS
+    version:             2026.03.02
+    shortVersion:        2026.03.02
+    versionedName:       Equestria OS
+    shortVersionedName:  Equestria OS
+    bootloaderEntryName: Equestria OS
+    
+images:
+    productLogo:         "equestria-os-logo.png"
+    productIcon:         "equestria-os-icon.png"
+    productWelcome:      "opening-banner.jpg"
+    
+slideshowAPI: 2
+
+style:
+   SidebarBackground:        "#0d0e22"
+   SidebarText:              "#f5f6f7"
+   SidebarTextCurrent:       "#0d0e22"
+   SidebarBackgroundCurrent: "#f5f6f7"
+
+slideshow:               "show.qml"
+
+# log feature
+
+uploadServer :
+    type :    "fiche"
+    url :     "http://termbin.com:9999"
+    sizeLimit : -1

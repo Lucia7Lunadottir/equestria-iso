@@ -1,0 +1,101 @@
+# ── Base ──────────────────────────────────────────────────────
+base
+base-devel
+linux
+linux-firmware
+amd-ucode
+intel-ucode
+mkinitcpio
+
+# ── Boot ──────────────────────────────────────────────────────
+grub
+efibootmgr
+os-prober
+
+# ── Filesystem ────────────────────────────────────────────────
+btrfs-progs
+e2fsprogs
+exfatprogs
+dosfstools
+ntfs-3g
+
+# ── Network ───────────────────────────────────────────────────
+networkmanager
+openssh
+wget
+curl
+git
+
+# ── KDE Plasma ────────────────────────────────────────────────
+plasma-desktop
+sddm
+sddm-kcm
+dolphin
+konsole
+kate
+ark
+spectacle
+gwenview
+okular
+partitionmanager
+plasma-nm
+plasma-pa
+kscreen
+bluedevil
+xdg-user-dirs
+xdg-utils
+
+# ── Audio ─────────────────────────────────────────────────────
+pipewire
+pipewire-alsa
+pipewire-pulse
+wireplumber
+
+# ── Fonts ─────────────────────────────────────────────────────
+noto-fonts
+noto-fonts-emoji
+ttf-liberation
+
+# ── GPU ───────────────────────────────────────────────────────
+mesa
+vulkan-radeon
+vulkan-intel
+nvidia-open-dkms
+nvidia-utils
+
+# ── Utils ─────────────────────────────────────────────────────
+nano
+vim
+htop
+unzip
+reflector
+polkit
+sudo
+man-db
+
+# ── Archiso ───────────────────────────────────────────────────
+arch-install-scripts
+memtest86+
+syslinux
+
+# ── Equestria OS ──────────────────────────────────────────────
+pg-hooks
+pg-nvidia-hook
+pg-gpu-sync
+pg-rankmirrors
+pg-reboot-notify
+pg-update
+equestria-branding
+equestria-keyring
+mkinitcpio-archiso
+firefox
+fastfetch
+chafa
+equestria-os-welcome-hub
+equestria-os-package-manager
+equestria-os-package-installer
+equestria-os-character-theme
+kdeplasma-addons
+calamares
+squashfs-tools
+rsync

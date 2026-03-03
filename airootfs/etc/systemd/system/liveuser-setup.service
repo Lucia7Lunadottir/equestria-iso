@@ -1,0 +1,12 @@
+[Unit]
+Description=Equestria OS — Live user setup
+Before=display-manager.service
+After=systemd-sysusers.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/eq-liveuser-setup
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

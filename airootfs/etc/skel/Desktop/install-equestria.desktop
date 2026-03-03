@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Install Equestria OS
+Name[ru]=Установить Equestria OS
+Exec=sudo calamares
+Icon=calamares
+Terminal=false
+Categories=System;

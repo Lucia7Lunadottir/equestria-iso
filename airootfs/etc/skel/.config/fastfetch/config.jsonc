@@ -1,0 +1,24 @@
+{
+  "logo": {
+    "source": "/opt/equestria-os-character-theme/Equestria OS Character Theme_Data/StreamingAssets/MLP Cutiemarks/Sunset_Shimmer.png",
+    "type": "chafa",
+    "width": 24,
+    "height": 12,
+    "padding": {"right": 2}
+  },
+  "modules": [
+    "title", "separator",
+    {"type": "os", "key": "  OS"},
+    {"type": "kernel", "key": "  Kernel"},
+    {"type": "de", "key": "  DE"},
+    {"type": "shell", "key": "  Shell"},
+    {"type": "terminal", "key": "  Terminal"},
+    {"type": "cpu", "key": "  CPU"},
+    {"type": "gpu", "key": "  GPU"},
+    {"type": "memory", "key": "  RAM"},
+    {"type": "disk", "key": "  Disk"},
+    {"type": "uptime", "key": "  Uptime"},
+    "separator",
+    {"type": "colors", "symbol": "circle"}
+  ]
+}

@@ -1,0 +1,10 @@
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Type = Package
+Target = plasma-workspace
+
+[Action]
+Description = Setting custom KDE default wallpaper...
+When = PostTransaction
+Exec = /usr/bin/sed -i 's|^Image=.*|Image=/usr/share/wallpapers/EquestriaOS/default.png|' /usr/share/plasma/look-and-feel/org.kde.breeze.desktop/contents/defaults

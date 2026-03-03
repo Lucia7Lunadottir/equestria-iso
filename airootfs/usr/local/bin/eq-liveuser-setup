@@ -1,0 +1,13 @@
+#!/bin/bash
+useradd -m -G wheel,audio,video,storage,optical,network,input -s /bin/bash liveuser
+passwd -d liveuser
+echo "liveuser ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/liveuser
+chmod 440 /etc/sudoers.d/liveuser
+cp -rf /etc/skel/. /home/liveuser/
+chown -R liveuser:liveuser /home/liveuser/
+
+# Добавляем обои в конфиг
+CONFIG="/home/liveuser/.config/plasma-org.kde.plasma.desktop-appletsrc"
+echo "" >> "$CONFIG"
+echo "[Containments][1][Wallpaper][org.kde.image][General]" >> "$CONFIG"
+echo "Image=file:///usr/share/wallpapers/EquestriaOS/default.png" >> "$CONFIG"
