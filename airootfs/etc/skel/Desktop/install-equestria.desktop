@@ -2,7 +2,7 @@
 Type=Application
 Name=Install Equestria OS
 Name[ru]=Установить Equestria OS
-Exec=sudo calamares
+Exec=sudo /usr/local/bin/install-equestria.sh
 Icon=calamares
 Terminal=false
 Categories=System;

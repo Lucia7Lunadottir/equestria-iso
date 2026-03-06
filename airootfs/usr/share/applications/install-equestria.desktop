@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Install Equestria OS
+Exec=sudo /usr/local/bin/install-equestria.sh
+Icon=calamares
+Terminal=false
+Categories=System;

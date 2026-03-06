@@ -3,6 +3,7 @@ base
 base-devel
 linux
 linux-firmware
+linux-headers
 amd-ucode
 intel-ucode
 mkinitcpio
@@ -25,6 +26,47 @@ openssh
 wget
 curl
 git
+
+glib-networking
+kdenetwork-filesharing
+networkmanager-openconnect
+networkmanager-openvpn
+networkmanager-qt
+networkmanager-vpn-plugin-openconnect
+networkmanager-vpn-plugin-openvpn
+
+
+# ── Bluetooth (Core) ──────────────────────────────────────────
+bluez
+bluez-utils
+
+# ── Printing ──────────────────────────────────────────────────
+cups
+cups-pdf
+print-manager
+
+# ── Power Management (Laptops) ────────────────────────────────
+power-profiles-daemon
+
+# ── Media Codecs & Player ─────────────────────────────────────
+gst-plugins-good
+gst-plugins-bad
+gst-plugins-ugly
+gst-libav
+haruna
+
+# ── Archives Support ──────────────────────────────────────────
+p7zip
+unrar
+zip
+
+# ── Local Network Discovery (mDNS) ────────────────────────────
+avahi
+nss-mdns
+
+# ── System Protection (OOM Killer) ────────────────────────────
+earlyoom
+
 
 # ── KDE Plasma ────────────────────────────────────────────────
 plasma-desktop
@@ -63,6 +105,12 @@ vulkan-intel
 nvidia-open-dkms
 nvidia-utils
 
+xf86-video-amdgpu
+xf86-video-intel
+xf86-video-nouveau
+xf86-video-qxl
+
+
 # ── Utils ─────────────────────────────────────────────────────
 nano
 vim
@@ -90,6 +138,7 @@ equestria-keyring
 mkinitcpio-archiso
 firefox
 fastfetch
+imagemagick
 chafa
 equestria-os-welcome-hub
 equestria-os-package-manager
