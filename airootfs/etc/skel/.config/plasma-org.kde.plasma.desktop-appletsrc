@@ -225,16 +225,13 @@ totalSensors=["memory/physical/usedPercent"]
 immutability=1
 plugin=org.kde.plasma.icon
 
-[Containments][2][Applets][45][Configuration]
-localPath=/home/lucial/.local/share/plasma_icons/firefox.desktop
-url=file:///usr/share/applications/firefox.desktop
 
 [Containments][2][Applets][5]
 immutability=1
 plugin=org.kde.plasma.icontasks
 
 [Containments][2][Applets][5][Configuration][General]
-launchers=preferred://filemanager,applications:systemsettings.desktop,applications:org.kde.konsole.desktop
+launchers=preferred://filemanager,applications:systemsettings.desktop,applications:org.kde.konsole.desktop,applications:firefox.desktop
 
 [Containments][2][Applets][6]
 immutability=1

@@ -2,7 +2,7 @@
 # shellcheck disable=SC2034
 
 iso_name="equestria-os"
-iso_label="EQUESTRIA_$(date --date="@${SOURCE_DATE_EPOCH:-$(date +%s)}" +%Y%m)"
+iso_label="EQUESTRIA_OS_$(date --date="@${SOURCE_DATE_EPOCH:-$(date +%s)}" +%Y%m)"
 iso_publisher="Equestria OS <https://psyche-games.com>"
 iso_application="Equestria OS — Arch-based Linux Distribution"
 iso_version="$(date --date="@${SOURCE_DATE_EPOCH:-$(date +%s)}" +%Y.%m.%d)"
@@ -24,4 +24,6 @@ file_permissions=(
   ["/usr/local/bin/livecd-sound"]="0:0:755"
   ["/usr/local/bin/eq-liveuser-setup"]="0:0:755"
   ["/usr/local/bin/install-equestria.sh"]="0:0:755"
+  ["/usr/bin/yay"]="0:0:755"
+  ["/etc/profile.d/setup-flathub.sh"]="0:0:755"
 )
