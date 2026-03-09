@@ -4,109 +4,6 @@ RightButton;NoModifier=org.kde.contextmenu
 [ActionPlugins][1]
 RightButton;NoModifier=org.kde.contextmenu
 
-[Containments][1]
-ItemGeometries-1920x1080=Applet-32:16,640,336,384,0;Applet-33:32,400,336,240,0;Applet-31:480,928,112,80,0;Applet-35:1584,640,336,352,0;
-ItemGeometriesHorizontal=Applet-32:16,640,336,384,0;Applet-33:32,400,336,240,0;Applet-31:480,928,112,80,0;Applet-35:1584,640,336,352,0;
-activityId=4b046974-9245-4e11-94d1-949463fd79d0
-formfactor=0
-immutability=1
-lastScreen=0
-location=0
-plugin=org.kde.plasma.folder
-wallpaperplugin=org.kde.slideshow
-
-[Containments][1][Applets][31]
-immutability=1
-plugin=org.kde.plasma.trash
-
-[Containments][1][Applets][32]
-immutability=1
-plugin=org.kde.plasma.systemmonitor.cpucore
-
-[Containments][1][Applets][32][Configuration]
-CurrentPreset=org.kde.plasma.systemmonitor
-
-[Containments][1][Applets][32][Configuration][Appearance]
-chartFace=org.kde.ksysguard.barchart
-title=Загрузка ядер ЦП
-
-[Containments][1][Applets][32][Configuration][SensorColors]
-cpu/cpu.*/usage=239,117,184
-cpu/cpu0/usage=239,117,184
-cpu/cpu1/usage=239,117,138
-cpu/cpu10/usage=117,214,239
-cpu/cpu11/usage=117,169,239
-cpu/cpu12/usage=117,123,239
-cpu/cpu13/usage=157,117,239
-cpu/cpu14/usage=203,117,239
-cpu/cpu15/usage=239,117,230
-cpu/cpu2/usage=239,142,117
-cpu/cpu3/usage=239,187,117
-cpu/cpu4/usage=239,233,117
-cpu/cpu5/usage=199,239,117
-cpu/cpu6/usage=153,239,117
-cpu/cpu7/usage=117,239,126
-cpu/cpu8/usage=117,239,172
-cpu/cpu9/usage=117,239,218
-
-[Containments][1][Applets][32][Configuration][Sensors]
-highPrioritySensorIds=["cpu/cpu.*/usage"]
-totalSensors=["cpu/all/usage"]
-
-[Containments][1][Applets][33]
-immutability=1
-plugin=org.kde.plasma.systemmonitor.memory
-
-[Containments][1][Applets][33][Configuration]
-CurrentPreset=org.kde.plasma.systemmonitor
-
-[Containments][1][Applets][33][Configuration][Appearance]
-chartFace=org.kde.ksysguard.piechart
-title=Использование памяти
-
-[Containments][1][Applets][33][Configuration][SensorColors]
-memory/physical/used=239,117,184
-
-[Containments][1][Applets][33][Configuration][Sensors]
-highPrioritySensorIds=["memory/physical/used"]
-lowPrioritySensorIds=["memory/physical/total"]
-totalSensors=["memory/physical/usedPercent"]
-
-[Containments][1][Applets][35]
-immutability=1
-plugin=org.kde.plasma.systemmonitor.diskusage
-
-[Containments][1][Applets][35][Configuration]
-CurrentPreset=org.kde.plasma.systemmonitor
-
-[Containments][1][Applets][35][Configuration][Appearance]
-chartFace=org.kde.ksysguard.horizontalbars
-title=Использование дискового пространства
-
-[Containments][1][Applets][35][Configuration][SensorColors]
-disk/.*/usedPercent=239,117,184
-disk/1961a8bf-8179-45ba-be7f-c6a140e2d6a1/usedPercent=117,239,172
-disk/56d40d9ad40d7d8d/usedPercent=239,196,117
-disk/6028108828105f7a/usedPercent=135,239,117
-disk/all/usedPercent=239,117,184
-disk/dc028ee1028ec04e/usedPercent=148,117,239
-
-[Containments][1][Applets][35][Configuration][Sensors]
-highPrioritySensorIds=["disk/.*/usedPercent"]
-lowPrioritySensorIds=["disk/all/total"]
-totalSensors=["disk/all/usedPercent"]
-
-[Containments][1][ConfigDialog]
-DialogHeight=630
-DialogWidth=810
-
-[Containments][1][General]
-changedPositions={"desktop:/Blender.desktop":["1920x1080","1","16"],"desktop:/Krita.desktop":["1920x1080","0","0"],"desktop:/SideQuest.desktop":["1920x1080","0","15"],"desktop:/audacity.desktop":["1920x1080","0","14"],"desktop:/com.jetpackduba.Gitnuro.desktop":["1920x1080","0","11"],"desktop:/unityhub.desktop":["1920x1080","0","16"]}
-lastResolution=1920x1080
-positions={"1920x1080":["2","17","desktop:/Krita.desktop","0","0","desktop:/SideQuest.desktop","0","15","desktop:/unityhub.desktop","0","16","desktop:/com.jetpackduba.Gitnuro.desktop","0","11","desktop:/steam.desktop","0","1","desktop:/audacity.desktop","0","14","desktop:/Blender.desktop","1","16"]}
-sortMode=-1
-
-
 [Containments][2]
 activityId=
 formfactor=2
@@ -125,7 +22,7 @@ popupHeight=451
 popupWidth=810
 
 [Containments][2][Applets][21][Configuration][Appearance]
-enabledCalendarPlugins=holidaysevents
+enabledCalendarPlugins=h,o,l,i,d,a,y,s,e,v,e,n,t,s,
 fontWeight=400
 
 [Containments][2][Applets][21][Configuration][ConfigDialog]
@@ -220,11 +117,6 @@ memory/physical/used=239,117,184
 highPrioritySensorIds=["memory/physical/used"]
 lowPrioritySensorIds=["memory/physical/total"]
 totalSensors=["memory/physical/usedPercent"]
-
-[Containments][2][Applets][45]
-immutability=1
-plugin=org.kde.plasma.icon
-
 
 [Containments][2][Applets][5]
 immutability=1
@@ -334,29 +226,30 @@ DialogHeight=630
 DialogWidth=810
 
 [Containments][2][Applets][7][General]
-extraItems=org.kde.plasma.manage-inputmethod,org.kde.plasma.keyboardlayout,org.kde.plasma.cameraindicator,org.kde.kdeconnect,org.kde.plasma.devicenotifier,org.kde.plasma.volume,org.kde.plasma.battery,org.kde.plasma.keyboardindicator,org.kde.kscreen,org.kde.plasma.brightness,org.kde.plasma.mediacontroller,org.kde.plasma.weather,org.kde.plasma.printmanager,org.kde.plasma.networkmanagement,org.kde.plasma.clipboard,org.kde.plasma.bluetooth,org.kde.plasma.notifications
+extraItems=org.kde.plasma.manage-inputmethod,org.kde.plasma.keyboardlayout,org.kde.plasma.cameraindicator,org.kde.plasma.devicenotifier,org.kde.plasma.volume,org.kde.plasma.battery,org.kde.plasma.keyboardindicator,org.kde.kscreen,org.kde.plasma.brightness,org.kde.plasma.mediacontroller,org.kde.plasma.weather,org.kde.plasma.printmanager,org.kde.plasma.networkmanagement,org.kde.plasma.clipboard,org.kde.plasma.bluetooth,org.kde.plasma.notifications
 hiddenItems=toolbox,org.kde.plasma.clipboard,ROG Control Center,org.kde.plasma.bluetooth
 iconSpacing=1
-knownItems=org.kde.plasma.clipboard,org.kde.plasma.manage-inputmethod,org.kde.plasma.keyboardlayout,org.kde.plasma.cameraindicator,org.kde.plasma.bluetooth,org.kde.kdeconnect,org.kde.plasma.devicenotifier,org.kde.plasma.volume,org.kde.plasma.battery,org.kde.plasma.keyboardindicator,org.kde.kscreen,org.kde.plasma.brightness,org.kde.plasma.notifications,org.kde.plasma.mediacontroller,org.kde.plasma.weather,org.kde.plasma.printmanager,org.kde.plasma.networkmanagement
+knownItems=org.kde.plasma.clipboard,org.kde.plasma.manage-inputmethod,org.kde.plasma.keyboardlayout,org.kde.plasma.cameraindicator,org.kde.plasma.bluetooth,org.kde.plasma.devicenotifier,org.kde.plasma.volume,org.kde.plasma.battery,org.kde.plasma.keyboardindicator,org.kde.kscreen,org.kde.plasma.brightness,org.kde.plasma.notifications,org.kde.plasma.mediacontroller,org.kde.plasma.weather,org.kde.plasma.printmanager,org.kde.plasma.networkmanagement
 scaleIconsToFit=true
 shownItems=org.kde.plasma.notifications
 
 [Containments][2][General]
-AppletOrder=34;26;3;5;45;25;38;44;6;7;21;22
+AppletOrder=34;26;3;5;25;38;44;6;7;21;22
 
-[Containments][39]
-activityId=aa3ee513-3ab5-4295-a6e4-859c0b440faf
+[Containments][46]
+ItemGeometries-1920x1080=
+ItemGeometriesHorizontal=
+activityId=6d8b1fb8-0061-4b61-98e9-21ba098100bf
 formfactor=0
 immutability=1
 lastScreen=0
 location=0
 plugin=org.kde.plasma.folder
-wallpaperplugin=org.kde.slideshow
+wallpaperplugin=org.kde.image
 
-[Containments][39][ConfigDialog]
-DialogHeight=630
-DialogWidth=810
+[Containments][46][Wallpaper][org.kde.image][General]
+Image=file:///usr/share/wallpapers/EquestriaOS/default.png
 
 [ScreenMapping]
 itemsOnDisabledScreens=0,aa3ee513-3ab5-4295-a6e4-859c0b440faf,3,desktop:/steam.desktop,desktop:/Blender.desktop,desktop:/Krita.desktop
-screenMapping=desktop:/SideQuest.desktop,0,4b046974-9245-4e11-94d1-949463fd79d0,desktop:/unityhub.desktop,0,4b046974-9245-4e11-94d1-949463fd79d0,desktop:/audacity.desktop,0,4b046974-9245-4e11-94d1-949463fd79d0,desktop:/Blender.desktop,0,4b046974-9245-4e11-94d1-949463fd79d0,desktop:/com.jetpackduba.Gitnuro.desktop,0,4b046974-9245-4e11-94d1-949463fd79d0,desktop:/Krita.desktop,0,4b046974-9245-4e11-94d1-949463fd79d0,desktop:/steam.desktop,0,4b046974-9245-4e11-94d1-949463fd79d0
+screenMapping=desktop:/Blender.desktop,0,4b046974-9245-4e11-94d1-949463fd79d0,desktop:/com.jetpackduba.Gitnuro.desktop,0,4b046974-9245-4e11-94d1-949463fd79d0,desktop:/audacity.desktop,0,4b046974-9245-4e11-94d1-949463fd79d0,desktop:/SideQuest.desktop,0,4b046974-9245-4e11-94d1-949463fd79d0,desktop:/Krita.desktop,0,4b046974-9245-4e11-94d1-949463fd79d0,desktop:/unityhub.desktop,0,4b046974-9245-4e11-94d1-949463fd79d0,desktop:/install-equestria.desktop,0,6d8b1fb8-0061-4b61-98e9-21ba098100bf,desktop:/steam.desktop,0,4b046974-9245-4e11-94d1-949463fd79d0
