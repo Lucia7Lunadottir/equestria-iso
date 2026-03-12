@@ -1,9 +1,12 @@
 # ── Base ──────────────────────────────────────────────────────
 base
 base-devel
+
 linux
+linux-lts
 linux-firmware
 linux-headers
+linux-lts-headers
 amd-ucode
 intel-ucode
 mkinitcpio
@@ -113,6 +116,7 @@ xf86-video-amdgpu
 xf86-video-intel
 xf86-video-nouveau
 xf86-video-qxl
+vulkan-nouveau
 
 
 # ── Utils ─────────────────────────────────────────────────────

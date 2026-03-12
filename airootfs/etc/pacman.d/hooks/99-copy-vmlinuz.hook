@@ -1,0 +1,11 @@
+[Trigger]
+Type = Package
+Operation = Install
+Operation = Upgrade
+Target = linux
+Target = linux-lts
+
+[Action]
+Description = Copying kernels to /boot...
+When = PostTransaction
+Exec = /bin/sh -c 'for v in /usr/lib/modules/*/vmlinuz; do ver=$(basename $(dirname $v)); cp -f $v /boot/vmlinuz-${ver%-*}; done'

@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find /home/lucial/equestria-iso/airootfs -name \"*.conf\" | xargs grep -l \"keyring\" 2>/dev/null; find /home/lucial/equestria-iso/airootfs -path \"*/pacman.d/*\" 2>/dev/null | head -20)",
+      "Bash(find /home/lucial/equestria-iso/work/x86_64/airootfs -path \"*/pacman.d/gnupg*\" 2>/dev/null | head -20)",
+      "Bash(cd /home/lucial/equestria-packages/equestria-os-keyring && makepkg -f --noconfirm 2>&1)",
+      "Bash(find /home/lucial/equestria-iso -name \"*.pkg.tar.zst\" 2>/dev/null | head -20; find /home/lucial/equestria-iso -name \"equestria-os-keyring*.pkg*\" 2>/dev/null)",
+      "Bash(find /home/lucial/equestria-iso -name \"*.db\" -o -name \"*.db.tar.*\" 2>/dev/null | head -10; find /home/lucial/equestria-iso -name \"pacman.conf\" | head -5)",
+      "Bash(ls /home/lucial/equestria-packages/equestria-os-keyring/*.pkg.tar.zst)",
+      "Bash(makepkg -f --noconfirm 2>&1)",
+      "Bash(find /home/lucial/equestria-iso/airootfs -name \"pg-gpu-sync\" 2>/dev/null; find /home/lucial/equestria-packages -name \"pg-gpu-sync\" -o -name \"*pg-gpu*\" 2>/dev/null | head -10)",
+      "Bash(cd /home/lucial/equestria-packages/pg-gpu-sync && makepkg -f --noconfirm 2>&1)",
+      "Bash(cp /home/lucial/equestria-packages/pg-gpu-sync/pg-gpu-sync-1.0.0-3-any.pkg.tar.zst /home/lucial/equestria-local-repo/ && repo-add /home/lucial/equestria-local-repo/equestria.db.tar.gz /home/lucial/equestria-local-repo/pg-gpu-sync-1.0.0-3-any.pkg.tar.zst 2>&1)",
+      "Bash(cat /home/lucial/equestria-iso/airootfs/etc/calamares/files/environment; find /home/lucial/equestria-iso/airootfs/etc -name \"kwinrc\" -o -name \"kwin*\" 2>/dev/null | head -5)",
+      "Bash(makepkg -f --noconfirm 2>&1 && cp pg-gpu-sync-1.0.0-4-any.pkg.tar.zst /home/lucial/equestria-local-repo/ && repo-add /home/lucial/equestria-local-repo/equestria.db.tar.gz /home/lucial/equestria-local-repo/pg-gpu-sync-1.0.0-4-any.pkg.tar.zst 2>&1)"
+    ]
+  }
+}
