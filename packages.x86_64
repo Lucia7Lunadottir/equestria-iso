@@ -10,6 +10,7 @@ linux-lts-headers
 amd-ucode
 intel-ucode
 mkinitcpio
+plymouth
 
 # ── Boot ──────────────────────────────────────────────────────
 grub
@@ -145,8 +146,16 @@ equestria-os-branding
 equestria-os-keyring
 equestria-os-welcome-hub
 equestria-os-package-manager
-equestria-os-package-installer
+equestria-os-essentials
+equestria-os-app-store
 equestria-os-character-theme
+equestria-os-relocator
+equestria-os-disk-manager
+equestria-os-task-panel-changer
+equestria-os-proton-starter
+equestria-os-services-manager
+equestria-os-git-askpass
+filelight
 mkinitcpio-archiso
 firefox
 fastfetch
@@ -156,3 +165,14 @@ kdeplasma-addons
 calamares
 squashfs-tools
 rsync
+
+
+# ── Поддержка 32-битных приложений для Proton ──
+lib32-glibc
+lib32-gcc-libs
+lib32-mesa
+lib32-vulkan-intel
+lib32-vulkan-radeon
+lib32-nvidia-utils
+
+
