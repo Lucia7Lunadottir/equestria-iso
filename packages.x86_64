@@ -1,6 +1,7 @@
 # ── Base ──────────────────────────────────────────────────────
 base
 base-devel
+archlinux-keyring
 
 linux
 linux-lts
@@ -90,6 +91,7 @@ kscreen
 bluedevil
 xdg-user-dirs
 xdg-utils
+xdg-desktop-portal-kde
 kinfocenter
 discover
 flatpak
@@ -112,6 +114,9 @@ vulkan-radeon
 vulkan-intel
 nvidia-open-dkms
 nvidia-utils
+egl-wayland
+xorg-xwayland
+qt6-wayland
 
 xf86-video-amdgpu
 xf86-video-intel
@@ -146,8 +151,8 @@ equestria-os-branding
 equestria-os-keyring
 equestria-os-welcome-hub
 equestria-os-package-manager
-equestria-os-essentials
-equestria-os-app-store
+equestria-os-software-center
+equestria-os-tutorial
 equestria-os-character-theme
 equestria-os-relocator
 equestria-os-disk-manager
@@ -175,4 +180,4 @@ lib32-vulkan-intel
 lib32-vulkan-radeon
 lib32-nvidia-utils
 
-
+umu-launcher

@@ -1,0 +1,37 @@
+#!/bin/bash
+# Equestria OS locale setup — called by Calamares shellprocess during installation
+# Ensures the locale selected by the user is actually generated and applied.
+set -e
+
+LOCALE_CONF="/etc/locale.conf"
+LOCALE_GEN="/etc/locale.gen"
+
+if [ ! -f "$LOCALE_CONF" ]; then
+    echo "eq-locale-setup: $LOCALE_CONF not found, skipping" >&2
+    exit 0
+fi
+
+# Read the configured LANG
+. "$LOCALE_CONF"
+
+if [ -z "$LANG" ] || [ "$LANG" = "C" ] || [ "$LANG" = "C.UTF-8" ] || [ "$LANG" = "POSIX" ]; then
+    echo "eq-locale-setup: LANG is '$LANG', nothing to do" >&2
+    locale-gen
+    exit 0
+fi
+
+echo "eq-locale-setup: configuring locale '$LANG'"
+
+if [ -f "$LOCALE_GEN" ]; then
+    # Strip charset suffix to match both "ru_RU.UTF-8 UTF-8" and "ru_RU.UTF-8"
+    BASE="${LANG%%.*}"
+    # Uncomment the locale line in locale.gen if it is commented out
+    sed -i "s|^#\(${BASE}\.[A-Za-z0-9@_-]* .*\)|\1|" "$LOCALE_GEN"
+    sed -i "s|^#\(${BASE}\.[A-Za-z0-9@_-]*$\)|\1|" "$LOCALE_GEN"
+    echo "eq-locale-setup: locale.gen updated"
+else
+    echo "eq-locale-setup: $LOCALE_GEN not found, will let locale-gen handle it" >&2
+fi
+
+locale-gen
+echo "eq-locale-setup: done"

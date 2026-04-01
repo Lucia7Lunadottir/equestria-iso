@@ -1,3 +1,8 @@
+[Compositing]
+Backend=OpenGL
+Enabled=true
+OpenGLIsUnsafe=false
+
 [Desktops]
 Id_1=532259ef-58d7-4864-a76c-1f2da2a90791
 Number=1

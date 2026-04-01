@@ -1,0 +1,5 @@
+[org.kde.spectacle.desktop]
+_k_friendly_name=Spectacle
+captureEntireDesktop=Print,Print,Capture Entire Desktop
+captureActiveWindow=Meta+Print,Meta+Print,Capture Active Window
+captureRectangularRegion=Meta+Shift+Print,Meta+Shift+Print,Capture Rectangular Region

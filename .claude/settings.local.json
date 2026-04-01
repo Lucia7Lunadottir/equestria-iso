@@ -12,7 +12,29 @@
       "Bash(cd /home/lucial/equestria-packages/pg-gpu-sync && makepkg -f --noconfirm 2>&1)",
       "Bash(cp /home/lucial/equestria-packages/pg-gpu-sync/pg-gpu-sync-1.0.0-3-any.pkg.tar.zst /home/lucial/equestria-local-repo/ && repo-add /home/lucial/equestria-local-repo/equestria.db.tar.gz /home/lucial/equestria-local-repo/pg-gpu-sync-1.0.0-3-any.pkg.tar.zst 2>&1)",
       "Bash(cat /home/lucial/equestria-iso/airootfs/etc/calamares/files/environment; find /home/lucial/equestria-iso/airootfs/etc -name \"kwinrc\" -o -name \"kwin*\" 2>/dev/null | head -5)",
-      "Bash(makepkg -f --noconfirm 2>&1 && cp pg-gpu-sync-1.0.0-4-any.pkg.tar.zst /home/lucial/equestria-local-repo/ && repo-add /home/lucial/equestria-local-repo/equestria.db.tar.gz /home/lucial/equestria-local-repo/pg-gpu-sync-1.0.0-4-any.pkg.tar.zst 2>&1)"
+      "Bash(makepkg -f --noconfirm 2>&1 && cp pg-gpu-sync-1.0.0-4-any.pkg.tar.zst /home/lucial/equestria-local-repo/ && repo-add /home/lucial/equestria-local-repo/equestria.db.tar.gz /home/lucial/equestria-local-repo/pg-gpu-sync-1.0.0-4-any.pkg.tar.zst 2>&1)",
+      "Bash(git -C /home/lucial/equestria-iso show HEAD:airootfs/root/customize_airootfs.sh 2>/dev/null || git -C /home/lucial/equestria-iso log --oneline --all -- airootfs/root/customize_airootfs.sh)",
+      "Bash(git -C /home/lucial/equestria-iso log --oneline -10 -- airootfs/root/customize_airootfs.sh)",
+      "Bash(find /home/lucial/equestria-iso/airootfs/etc/skel -type f 2>/dev/null; find /home/lucial/equestria-iso/airootfs/etc/xdg -name \"kwin*\" 2>/dev/null; find /home/lucial/equestria-iso/airootfs -name \"kwinrc\" 2>/dev/null | grep -v work)",
+      "Bash(find /home/lucial/equestria-iso/airootfs/etc -name \"mkinitcpio.conf\" -o -name \"mkinitcpio.conf.d\" 2>/dev/null | grep -v work; find /home/lucial/equestria-iso/airootfs/etc/mkinitcpio* -type f 2>/dev/null | grep -v work)",
+      "Bash(find /home/lucial/equestria-iso/airootfs/etc/systemd/system -name \"*.service\" 2>/dev/null | grep -v work | head -20)",
+      "Bash(cat /home/lucial/equestria-iso/airootfs/etc/systemd/system/multi-user.target.wants/pacman-init.service 2>/dev/null || find /home/lucial/equestria-iso/airootfs -name \"pacman-init.service\" 2>/dev/null | grep -v work | xargs cat 2>/dev/null)",
+      "Bash(pacman -Q calamares 2>/dev/null || echo \"not installed on host\")",
+      "Bash(find /usr/share/plasma -name LockScreen* -o -name lockscreen*)",
+      "Bash(find /usr/share/plasma /usr/lib/qt6 -path \"*breeze*\" -name \"Clock.qml\" 2>/dev/null; find /usr/lib/qt6 -path \"*breeze*components*\" -name \"*.qml\" 2>/dev/null | head -10)",
+      "Bash(pgrep -a python)",
+      "Bash(grep \"Kirigami.Theme.colorSet\" /usr/lib/qt6/qml/org/kde/breeze/components/Clock.qml; find /usr/lib/qt6/qml /usr/share/plasma -name \"Clock.qml\" 2>/dev/null; find ~/.cache -name \"*.qmlc\" 2>/dev/null | head -10)",
+      "Bash(cat /usr/lib/qt6/qml/SddmComponents/Clock.qml; find ~/.cache -path \"*kscreen*\" -o -path \"*locker*\" -o -path \"*breeze*\" 2>/dev/null | grep -i \"qml\\\\|cache\" | head -10)",
+      "Bash(sudo python3 -c \"\nsrc = '/usr/lib/qt6/qml/org/kde/breeze/components/Clock.qml'\nt = open\\(src\\).read\\(\\)\nt = t.replace\\('color: Kirigami.Theme.textColor', 'color: \\\\\"red\\\\\"'\\)\nopen\\(src, 'w'\\).write\\(t\\)\nprint\\('done'\\)\n\")",
+      "Bash(find /usr/lib/qt6/qml/org/kde/breeze -name \"*.qmlc\" 2>/dev/null; find /usr/share/plasma/shells/org.kde.plasma.desktop/contents/lockscreen/ -type f; strings /usr/lib/kscreenlocker_greet | grep -i \"clock\\\\|Clock\" | head -20)",
+      "Bash(cat /usr/lib/qt6/qml/org/kde/breeze/components/qmldir; nm -D /usr/lib/qt6/qml/org/kde/breeze/components/libcomponents.so 2>/dev/null | grep -i clock)",
+      "Bash(nm -D /usr/lib/qt6/qml/org/kde/breeze/components/libcomponents.so 2>/dev/null | grep -i \"Clock\\\\|clock\"; strings /usr/lib/qt6/qml/org/kde/breeze/components/libcomponents.so | grep \"Clock\\\\|ForegroundNormal\\\\|textColor\" | head -20)",
+      "Bash(find /home/lucial/EndeavourOS-ISO-main -name \"*.sh\" -o -name \"calamares*\" -o -name \"*keyring*\" 2>/dev/null | sort)",
+      "Bash(find /home/lucial/EndeavourOS-ISO-main/airootfs -type f -name \"*calamares*\" -o -name \"*pacman*\" 2>/dev/null | head -20)",
+      "Bash(find /home/lucial/EndeavourOS-ISO-main -type f -name \"*calamares*\" -o -name \"*settings*\" 2>/dev/null | grep -v \".png\\\\|.svg\")",
+      "Bash(grep -r \"calamares\" /home/lucial/EndeavourOS-ISO-main --include=\"*.md\" --include=\"*.sh\" --include=\"*.conf\" 2>/dev/null | head -20)",
+      "Bash(mkarchiso --version 2>/dev/null || pacman -Q archiso 2>/dev/null)",
+      "Bash(pacman -Q archiso)"
     ]
   }
 }

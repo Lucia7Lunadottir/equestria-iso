@@ -12,4 +12,8 @@ done
 
 sudo rm -rf ~/equestria-iso/work
 
+# Переинициализируем keyring хоста — нужен для live-окружения и Calamares
+sudo pacman-key --init
+sudo pacman-key --populate archlinux
+
 sudo mkarchiso -v -o ~/equestria-out .

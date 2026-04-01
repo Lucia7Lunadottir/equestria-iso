@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Equestria OS Tour
+Exec=python3 /opt/equestria-os-tutorial/main.py
+Icon=equestria-os-tutorial
+X-GNOME-Autostart-enabled=true
+Hidden=false

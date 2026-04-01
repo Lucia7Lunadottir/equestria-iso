@@ -1,0 +1,10 @@
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Type = Package
+Target = plymouth
+
+[Action]
+Description = Applying Equestria OS Plymouth watermark...
+When = PostTransaction
+Exec = /usr/bin/cp /etc/equestria-branding/plymouth-watermark.png /usr/share/plymouth/themes/spinner/watermark.png
