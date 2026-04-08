@@ -34,7 +34,19 @@
       "Bash(find /home/lucial/EndeavourOS-ISO-main -type f -name \"*calamares*\" -o -name \"*settings*\" 2>/dev/null | grep -v \".png\\\\|.svg\")",
       "Bash(grep -r \"calamares\" /home/lucial/EndeavourOS-ISO-main --include=\"*.md\" --include=\"*.sh\" --include=\"*.conf\" 2>/dev/null | head -20)",
       "Bash(mkarchiso --version 2>/dev/null || pacman -Q archiso 2>/dev/null)",
-      "Bash(pacman -Q archiso)"
+      "Bash(pacman -Q archiso)",
+      "Bash(grep -i \"vimix\\\\|cursor\" /home/lucial/equestria-iso/packages.x86_64; pacman -Qi vimix-cursors 2>/dev/null | head -5)",
+      "Bash(cp -r /home/lucial/.icons/Vimix-white-cursors /home/lucial/equestria-packages/equestria-os-branding/icons/\necho \"Done: $\\(ls /home/lucial/equestria-packages/equestria-os-branding/icons/\\)\")",
+      "Bash(cd /home/lucial/equestria-packages/equestria-os-branding && makepkg -f 2>&1)",
+      "Bash(ls /home/lucial/equestria-packages/equestria-os-branding/*.pkg.tar.zst)",
+      "Bash(find \"/mnt/NewBaseD/FromSystem/Git Projects/EndeavourOS-calamares-main\" -name \"*keyring*\" -o -name \"shellprocess*\" 2>/dev/null | sort)",
+      "Bash(find \"/mnt/NewBaseD/FromSystem/Git Projects/equestria-iso/airootfs\" -path \"*/pacman/keyrings*\" 2>/dev/null; find \"/mnt/NewBaseD/FromSystem/Git Projects/equestria-iso/airootfs\" -name \"*.gpg\" -o -name \"*trusted*\" -o -name \"*revoked*\" 2>/dev/null | grep -v boot)",
+      "Bash(grep -r \"pacman-key\\\\|keyring\" \"/home/lucial/Git Projects/EndeavourOS-ISO-main/\" --include=\"*.sh\" --include=\"*.service\" 2>/dev/null | head -30)",
+      "Bash(gpg --no-default-keyring --keyring \"/mnt/NewBaseD/FromSystem/Git Projects/equestria-packages/equestria-os-keyring/equestria-os.gpg\" --list-keys 2>/dev/null)",
+      "Bash(gpg --no-default-keyring --keyring \"/mnt/NewBaseD/FromSystem/Git Projects/equestria-packages/equestria-os-keyring/pkg/equestria-os-keyring/usr/share/pacman/keyrings/equestria-os.gpg\" --list-keys 2>/dev/null)",
+      "Bash(cd \"/mnt/NewBaseD/FromSystem/Git Projects/equestria-packages/equestria-os-keyring\" && makepkg -f 2>&1)",
+      "Bash(cd \"/mnt/NewBaseD/FromSystem/Git Projects/equestria-packages/equestria-os-keyring\" && makepkg -f 2>&1 | tail -5)",
+      "Bash(cd \"/mnt/NewBaseD/FromSystem/Git Projects/equestria-packages/equestria-os-keyring\" && makepkg -f 2>&1 | tail -4)"
     ]
   }
 }

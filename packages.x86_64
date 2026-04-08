@@ -160,6 +160,7 @@ equestria-os-task-panel-changer
 equestria-os-proton-starter
 equestria-os-services-manager
 equestria-os-git-askpass
+equestria-os-save-point
 filelight
 mkinitcpio-archiso
 firefox
@@ -170,7 +171,7 @@ kdeplasma-addons
 calamares
 squashfs-tools
 rsync
-
+haveged
 
 # ── Поддержка 32-битных приложений для Proton ──
 lib32-glibc

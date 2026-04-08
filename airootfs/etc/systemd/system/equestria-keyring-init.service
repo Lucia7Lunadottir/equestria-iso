@@ -8,7 +8,8 @@ Type=oneshot
 RemainAfterExit=no
 ExecStart=/bin/rm -rf /etc/pacman.d/gnupg
 ExecStart=/usr/bin/pacman-key --init
-ExecStart=/usr/bin/pacman-key --populate archlinux equestria-os
+ExecStart=/usr/bin/pacman-key --populate archlinux
+ExecStart=-/usr/bin/pacman-key --populate equestria-os
 ExecStartPost=/bin/touch /var/lib/equestria-keyring-done
 ExecStartPost=/usr/bin/systemctl disable equestria-keyring-init.service
 

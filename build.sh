@@ -6,14 +6,14 @@ if [ ! -t 0 ]; then
 fi
 
 
-for m in $(tac /proc/mounts | grep "equestria-iso/work" | awk '{print $2}'); do
+for m in $(tac /proc/mounts | grep "equestria-work" | awk '{print $2}'); do
     sudo umount -f -l "$m"
 done
 
-sudo rm -rf ~/equestria-iso/work
+sudo rm -rf /tmp/equestria-work
 
 # Переинициализируем keyring хоста — нужен для live-окружения и Calamares
 sudo pacman-key --init
 sudo pacman-key --populate archlinux
 
-sudo mkarchiso -v -o ~/equestria-out .
+sudo mkarchiso -v -w /tmp/equestria-work -o ~/equestria-out .
