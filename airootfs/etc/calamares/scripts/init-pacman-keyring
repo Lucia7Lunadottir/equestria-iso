@@ -1,4 +1,6 @@
 #!/bin/bash
+haveged -w 1024
 pacman-key --init
+pkill haveged
 pacman-key --populate archlinux
 pacman-key --populate equestria-os 2>/dev/null || true

@@ -1,0 +1,11 @@
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Operation = Remove
+Type = Package
+Target = *
+
+[Action]
+Description = Checking pacman keyring...
+When = PreTransaction
+Exec = /usr/local/bin/ensure-pacman-keyring

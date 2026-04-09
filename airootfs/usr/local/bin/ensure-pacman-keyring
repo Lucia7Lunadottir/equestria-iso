@@ -1,0 +1,7 @@
+#!/bin/bash
+# Проверяет keyring перед транзакцией pacman и инициализирует если нужно
+[ -s /etc/pacman.d/gnupg/pubring.gpg ] && exit 0
+
+pacman-key --init
+pacman-key --populate archlinux
+pacman-key --populate equestria-os 2>/dev/null || true
