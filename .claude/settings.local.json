@@ -46,7 +46,28 @@
       "Bash(gpg --no-default-keyring --keyring \"/mnt/NewBaseD/FromSystem/Git Projects/equestria-packages/equestria-os-keyring/pkg/equestria-os-keyring/usr/share/pacman/keyrings/equestria-os.gpg\" --list-keys 2>/dev/null)",
       "Bash(cd \"/mnt/NewBaseD/FromSystem/Git Projects/equestria-packages/equestria-os-keyring\" && makepkg -f 2>&1)",
       "Bash(cd \"/mnt/NewBaseD/FromSystem/Git Projects/equestria-packages/equestria-os-keyring\" && makepkg -f 2>&1 | tail -5)",
-      "Bash(cd \"/mnt/NewBaseD/FromSystem/Git Projects/equestria-packages/equestria-os-keyring\" && makepkg -f 2>&1 | tail -4)"
+      "Bash(cd \"/mnt/NewBaseD/FromSystem/Git Projects/equestria-packages/equestria-os-keyring\" && makepkg -f 2>&1 | tail -4)",
+      "Bash(pacman -Si calamares)",
+      "Bash(pacman -Si yaml-cpp)",
+      "Bash(pacman -Ss calamares)",
+      "Bash(yay -Si calamares)",
+      "Bash(yay -Ss calamares)",
+      "Read(//tmp/aur-calamares/**)",
+      "Bash(pacman:*)",
+      "Bash(makepkg -s --noconfirm)",
+      "Bash(ls:*)",
+      "Read(//tmp/**)",
+      "Bash(mkdir -p calamares-check)",
+      "Bash(tar -xf \"/mnt/NewBaseD/FromSystem/Git Projects/equestria-packages/calamares-3.4.2-2-x86_64.pkg.tar.zst\" -C calamares-check)",
+      "Bash(ldd calamares-check/usr/bin/calamares)",
+      "Bash(ldd /tmp/calamares-check/usr/bin/calamares)",
+      "Bash(echo \"exit: $?\")",
+      "Bash(ldd /tmp/calamares-check/usr/lib/libcalamares.so.3.4)",
+      "Bash(repo-add equestria-os.db.tar.gz calamares-3.4.2-2-x86_64.pkg.tar.zst)",
+      "Bash(systemd-analyze verify:*)",
+      "Bash(sudo cp:*)",
+      "Bash(sudo rm:*)",
+      "Bash(sudo pacman-key:*)"
     ]
   }
 }
