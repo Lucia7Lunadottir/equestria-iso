@@ -93,7 +93,6 @@ xdg-user-dirs
 xdg-utils
 xdg-desktop-portal-kde
 kinfocenter
-discover
 flatpak
 packagekit-qt6
 
@@ -161,6 +160,7 @@ equestria-os-proton-starter
 equestria-os-services-manager
 equestria-os-git-askpass
 equestria-os-save-point
+equestria-swap-manager
 filelight
 mkinitcpio-archiso
 firefox
