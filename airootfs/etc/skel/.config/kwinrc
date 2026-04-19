@@ -1,5 +1,6 @@
 [Compositing]
 Backend=OpenGL
+GLCore=true
 Enabled=true
 OpenGLIsUnsafe=false
 
