@@ -111,7 +111,7 @@ ttf-liberation
 mesa
 vulkan-radeon
 vulkan-intel
-nvidia-lts
+nvidia-open-dkms
 nvidia-utils
 egl-wayland
 xorg-xwayland
