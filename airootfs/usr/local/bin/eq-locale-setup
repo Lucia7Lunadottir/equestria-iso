@@ -28,6 +28,8 @@ if [ -f "$LOCALE_GEN" ]; then
     # Uncomment the locale line in locale.gen if it is commented out
     sed -i "s|^#\(${BASE}\.[A-Za-z0-9@_-]* .*\)|\1|" "$LOCALE_GEN"
     sed -i "s|^#\(${BASE}\.[A-Za-z0-9@_-]*$\)|\1|" "$LOCALE_GEN"
+    # Always ensure en_US.UTF-8 is generated — required by Steam, Proton, and many runtimes
+    sed -i "s|^#\(en_US\.UTF-8.*\)|\1|" "$LOCALE_GEN"
     echo "eq-locale-setup: locale.gen updated"
 else
     echo "eq-locale-setup: $LOCALE_GEN not found, will let locale-gen handle it" >&2

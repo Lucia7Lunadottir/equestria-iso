@@ -111,7 +111,7 @@ ttf-liberation
 mesa
 vulkan-radeon
 vulkan-intel
-nvidia-open-dkms
+nvidia-lts
 nvidia-utils
 egl-wayland
 xorg-xwayland
@@ -160,7 +160,8 @@ equestria-os-proton-starter
 equestria-os-services-manager
 equestria-os-git-askpass
 equestria-os-save-point
-equestria-swap-manager
+equestria-os-swap-manager
+equestria-os-settings
 filelight
 mkinitcpio-archiso
 firefox
