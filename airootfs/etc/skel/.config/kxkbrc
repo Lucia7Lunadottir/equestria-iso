@@ -1,2 +1,9 @@
 [Layout]
-Use=false
+DisplayNames=
+LayoutList=us
+Model=
+Options=
+ResetOldOptions=true
+SwitchMode=Global
+Use=true
+VariantList=

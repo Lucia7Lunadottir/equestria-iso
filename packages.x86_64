@@ -95,6 +95,7 @@ xdg-desktop-portal-kde
 kinfocenter
 flatpak
 packagekit-qt6
+plasma-systemmonitor
 
 # ── Audio ─────────────────────────────────────────────────────
 pipewire
@@ -111,7 +112,14 @@ ttf-liberation
 mesa
 vulkan-radeon
 vulkan-intel
-nvidia-open-dkms
+# nvidia-open-dkms is intentionally NOT pre-installed: it does not support
+# pre-Turing GPUs (Maxwell / Pascal / Volta — GTX 10xx, 900, 750 series).
+# pg-gpu-sync detects the GPU at first boot and installs the correct driver:
+#   Turing+  → nvidia-open-dkms
+#   Pascal   → equestria-nvidia-dkms / nvidia-dkms (proprietary)
+#   Kepler   → nvidia-470xx-dkms
+# Pre-installing nvidia-open-dkms here causes pg-nvidia-hook to bake the
+# wrong kernel module into initramfs before pg-gpu-sync can correct it.
 nvidia-utils
 egl-wayland
 xorg-xwayland
@@ -162,6 +170,7 @@ equestria-os-git-askpass
 equestria-os-save-point
 equestria-os-swap-manager
 equestria-os-settings
+equestria-installer
 filelight
 mkinitcpio-archiso
 firefox
