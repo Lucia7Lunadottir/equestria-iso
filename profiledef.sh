@@ -32,4 +32,6 @@ file_permissions=(
   ["/etc/calamares/scripts/init-pacman-keyring"]="0:0:755"
   ["/usr/local/bin/ensure-pacman-keyring"]="0:0:755"
   ["/etc/calamares/scripts/90-mkinitcpio-install.hook"]="0:0:644"
+  ["/usr/bin/equestria-os-tutorial"]="0:0:755"
+  ["/usr/bin/equestria-os-welcome"]="0:0:755"
 )
