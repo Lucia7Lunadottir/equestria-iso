@@ -1,3 +1,0 @@
-#!/bin/bash
-cd /usr/share/equestria-os-welcome/
-python welcome_hub.py
