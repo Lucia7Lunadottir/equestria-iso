@@ -40,6 +40,9 @@ networkmanager-qt
 networkmanager-vpn-plugin-openconnect
 networkmanager-vpn-plugin-openvpn
 
+sof-firmware
+linux-firmware-marvell
+broadcom-wl-dkms
 
 # ── Bluetooth (Core) ──────────────────────────────────────────
 bluez
@@ -130,6 +133,9 @@ xf86-video-intel
 xf86-video-nouveau
 xf86-video-qxl
 vulkan-nouveau
+
+vulkan-icd-loader
+lib32-vulkan-icd-loader
 
 
 # ── Utils ─────────────────────────────────────────────────────
