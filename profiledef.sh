@@ -8,7 +8,7 @@ iso_application="Equestria OS — Arch-based Linux Distribution"
 iso_version="$(date --date="@${SOURCE_DATE_EPOCH:-$(date +%s)}" +%Y.%m.%d)"
 install_dir="arch"
 buildmodes=('iso')
-bootmodes=('bios.syslinux' 'uefi.systemd-boot')
+bootmodes=('bios.syslinux' 'uefi.grub' 'uefi.systemd-boot')
 pacman_conf="pacman.conf"
 airootfs_image_type="squashfs"
 airootfs_image_tool_options=('-comp' 'xz' '-Xbcj' 'x86' '-b' '1M' '-Xdict-size' '1M')
@@ -32,6 +32,7 @@ file_permissions=(
   ["/etc/calamares/scripts/init-pacman-keyring"]="0:0:755"
   ["/usr/local/bin/ensure-pacman-keyring"]="0:0:755"
   ["/etc/calamares/scripts/90-mkinitcpio-install.hook"]="0:0:644"
+  ["/usr/local/bin/equestria-wifi-unblock.sh"]="0:0:755"
   ["/usr/bin/equestria-os-tutorial"]="0:0:755"
   ["/usr/bin/equestria-os-welcome"]="0:0:755"
 )

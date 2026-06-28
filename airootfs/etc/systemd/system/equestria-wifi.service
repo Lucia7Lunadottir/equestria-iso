@@ -1,0 +1,12 @@
+[Unit]
+Description=Equestria OS Core WiFi RF-Kill Unblock Service
+After=systemd-modules-load.service
+Before=NetworkManager.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/equestria-wifi-unblock.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
