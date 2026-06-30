@@ -115,14 +115,15 @@ ttf-liberation
 mesa
 vulkan-radeon
 vulkan-intel
-# nvidia-open-dkms is intentionally NOT pre-installed: it does not support
-# pre-Turing GPUs (Maxwell / Pascal / Volta — GTX 10xx, 900, 750 series).
-# pg-gpu-sync detects the GPU at first boot and installs the correct driver:
-#   Turing+  → nvidia-open-dkms
-#   Pascal   → equestria-nvidia-dkms / nvidia-dkms (proprietary)
-#   Kepler   → nvidia-470xx-dkms
-# Pre-installing nvidia-open-dkms here causes pg-nvidia-hook to bake the
-# wrong kernel module into initramfs before pg-gpu-sync can correct it.
+# NVIDIA kernel modules are NOT pre-installed.
+# pg-gpu-sync detects the GPU during Calamares install and at boot, then
+# installs the correct driver:
+#   Turing+  (RTX 20xx+, GTX 16xx) → nvidia-open-dkms + nvidia-utils (590+)
+#   Pascal/Maxwell/Volta (GTX 10xx, 900, 750) → equestria-nvidia-580xx-dkms + *-utils (v580)
+#   Kepler   (GTX 600/700)         → nvidia-470xx-dkms + *-utils
+#
+# nvidia-utils (590+) is pre-installed for Turing+ majority.
+# For Pascal/Maxwell, pg-gpu-sync replaces it with equestria-nvidia-580xx-utils.
 nvidia-utils
 egl-wayland
 xorg-xwayland
