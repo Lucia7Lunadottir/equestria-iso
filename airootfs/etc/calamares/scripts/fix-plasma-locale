@@ -1,0 +1,35 @@
+#!/bin/sh
+# Configures KDE Plasma locale settings based on /etc/locale.conf
+# Called from Calamares shellprocess (moved here to avoid $-variable conflicts)
+#
+# Writes plasma-localerc to /etc/skel/.config/ so new users get the right locale.
+# Also writes to existing home directories in case the user was already created.
+
+LANG_VAL=$(grep "^LANG=" /etc/locale.conf 2>/dev/null | cut -d= -f2 | tr -d '"')
+
+# Fallback: if locale.conf still has C/empty, try locale.gen
+if [ -z "$LANG_VAL" ] || [ "$LANG_VAL" = "C" ] || [ "$LANG_VAL" = "C.UTF-8" ]; then
+    LANG_VAL=$(grep -E '^[a-z]{2}_[A-Z]{2}\.UTF-8' /etc/locale.gen 2>/dev/null | grep -v '^en_US' | head -1 | awk '{print $1}')
+fi
+
+# Final fallback
+[ -z "$LANG_VAL" ] && LANG_VAL=en_US.UTF-8
+
+BASE=${LANG_VAL%%.*}
+LANGCODE=${BASE%%_*}
+
+# Write to /etc/skel/ for future users
+mkdir -p /etc/skel/.config
+printf "[Formats]\nLANG=%s\n\n[Translations]\nLANGUAGE=%s:%s\n" "$LANG_VAL" "$BASE" "$LANGCODE" > /etc/skel/.config/plasma-localerc
+
+# Also write to any existing home directories (in case users module already ran)
+for homedir in /home/*/; do
+    [ -d "$homedir" ] || continue
+    user=$(basename "$homedir")
+    # Skip system users
+    [ "$user" = "liveuser" ] && continue
+    mkdir -p "${homedir}.config"
+    printf "[Formats]\nLANG=%s\n\n[Translations]\nLANGUAGE=%s:%s\n" "$LANG_VAL" "$BASE" "$LANGCODE" > "${homedir}.config/plasma-localerc"
+    # Fix ownership
+    chown -R "$(stat -c '%U:%G' "$homedir")" "${homedir}.config/plasma-localerc" 2>/dev/null
+done

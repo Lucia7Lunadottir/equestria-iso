@@ -1,0 +1,8 @@
+#!/bin/sh
+# Configures KDE keyboard layout from xorg settings
+# Called from Calamares shellprocess (moved here to avoid $-variable conflicts)
+
+LAYOUT=$(grep -oP '(?<=XkbLayout ")[^"]+' /etc/X11/xorg.conf.d/00-keyboard.conf 2>/dev/null || echo us)
+VARIANT=$(grep -oP '(?<=XkbVariant ")[^"]*' /etc/X11/xorg.conf.d/00-keyboard.conf 2>/dev/null || echo "")
+
+printf "[Layout]\nDisplayNames=\nLayoutList=%s\nModel=\nOptions=\nResetOldOptions=true\nSwitchMode=Global\nUse=true\nVariantList=%s\n" "$LAYOUT" "$VARIANT" > /etc/skel/.config/kxkbrc

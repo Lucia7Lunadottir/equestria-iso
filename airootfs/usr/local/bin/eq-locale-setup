@@ -1,38 +1,138 @@
 #!/bin/bash
-# Equestria OS locale setup — called by Calamares shellprocess during installation
-# Ensures the locale selected by the user is actually generated and applied.
+# Equestria OS locale setup — called by Calamares shellprocess during installation.
+#
+# Problem: the Calamares "locale" module may silently fail to write
+# /etc/locale.conf, leaving it as LANG=C.UTF-8 from the live ISO.
+# This script detects that situation and recovers the user's locale
+# from three fallback sources:
+#   1. /etc/locale.conf itself (if Calamares DID write it)
+#   2. /etc/locale.gen (uncommented non-en_US locale)
+#   3. Keyboard layout from /etc/X11/xorg.conf.d/00-keyboard.conf
+#      (the Calamares keyboard module always writes this file)
 set -e
 
 LOCALE_CONF="/etc/locale.conf"
 LOCALE_GEN="/etc/locale.gen"
+KEYBOARD_CONF="/etc/X11/xorg.conf.d/00-keyboard.conf"
 
-if [ ! -f "$LOCALE_CONF" ]; then
-    echo "eq-locale-setup: $LOCALE_CONF not found, skipping" >&2
-    exit 0
+# ── Keyboard layout → locale mapping ──────────────────────────────
+# Covers Equestria OS supported languages + common layouts.
+keyboard_to_locale() {
+    case "$1" in
+        ru)  echo "ru_RU.UTF-8" ;;
+        de)  echo "de_DE.UTF-8" ;;
+        fr)  echo "fr_FR.UTF-8" ;;
+        es)  echo "es_ES.UTF-8" ;;
+        pt)  echo "pt_BR.UTF-8" ;;
+        pl)  echo "pl_PL.UTF-8" ;;
+        uk)  echo "uk_UA.UTF-8" ;;
+        ua)  echo "uk_UA.UTF-8" ;;
+        ja)  echo "ja_JP.UTF-8" ;;
+        cn)  echo "zh_CN.UTF-8" ;;
+        it)  echo "it_IT.UTF-8" ;;
+        cz)  echo "cs_CZ.UTF-8" ;;
+        nl)  echo "nl_NL.UTF-8" ;;
+        se)  echo "sv_SE.UTF-8" ;;
+        no)  echo "nb_NO.UTF-8" ;;
+        fi)  echo "fi_FI.UTF-8" ;;
+        dk)  echo "da_DK.UTF-8" ;;
+        hu)  echo "hu_HU.UTF-8" ;;
+        ro)  echo "ro_RO.UTF-8" ;;
+        tr)  echo "tr_TR.UTF-8" ;;
+        kr)  echo "ko_KR.UTF-8" ;;
+        br)  echo "pt_BR.UTF-8" ;;
+        gr)  echo "el_GR.UTF-8" ;;
+        il)  echo "he_IL.UTF-8" ;;
+        by)  echo "be_BY.UTF-8" ;;
+        bg)  echo "bg_BG.UTF-8" ;;
+        hr)  echo "hr_HR.UTF-8" ;;
+        sk)  echo "sk_SK.UTF-8" ;;
+        si)  echo "sl_SI.UTF-8" ;;
+        rs)  echo "sr_RS.UTF-8" ;;
+        lt)  echo "lt_LT.UTF-8" ;;
+        lv)  echo "lv_LV.UTF-8" ;;
+        ee)  echo "et_EE.UTF-8" ;;
+        *)   echo "" ;;
+    esac
+}
+
+# ── Step 1: Read current locale.conf ──────────────────────────────
+LANG=""
+if [ -f "$LOCALE_CONF" ]; then
+    . "$LOCALE_CONF"
 fi
 
-# Read the configured LANG
-. "$LOCALE_CONF"
+# Check if LANG is a real locale (not the ISO default)
+is_real_locale() {
+    [ -n "$1" ] && [ "$1" != "C" ] && [ "$1" != "C.UTF-8" ] && [ "$1" != "POSIX" ]
+}
 
-if [ -z "$LANG" ] || [ "$LANG" = "C" ] || [ "$LANG" = "C.UTF-8" ] || [ "$LANG" = "POSIX" ]; then
-    echo "eq-locale-setup: LANG is '$LANG', nothing to do" >&2
-    locale-gen
-    exit 0
+if is_real_locale "$LANG"; then
+    echo "eq-locale-setup: locale.conf has LANG=$LANG — OK" >&2
+else
+    echo "eq-locale-setup: locale.conf has LANG='${LANG:-<empty>}' — need to recover" >&2
+
+    # ── Step 2: Try locale.gen ────────────────────────────────────
+    DETECTED=""
+    if [ -f "$LOCALE_GEN" ]; then
+        DETECTED=$(grep -E '^[a-z]{2}_[A-Z]{2}\.UTF-8' "$LOCALE_GEN" \
+                   | grep -v '^en_US' \
+                   | head -1 \
+                   | awk '{print $1}')
+        if [ -n "$DETECTED" ]; then
+            echo "eq-locale-setup: recovered '$DETECTED' from locale.gen" >&2
+        fi
+    fi
+
+    # ── Step 3: Try keyboard layout ───────────────────────────────
+    if [ -z "$DETECTED" ] && [ -f "$KEYBOARD_CONF" ]; then
+        # Parse: Option "XkbLayout" "us,ru"  →  get all layouts
+        LAYOUTS=$(grep -oP '(?<=XkbLayout\s")[^"]+' "$KEYBOARD_CONF" 2>/dev/null \
+               || grep -oP '(?<=XkbLayout ")[^"]+' "$KEYBOARD_CONF" 2>/dev/null \
+               || echo "")
+
+        if [ -n "$LAYOUTS" ]; then
+            echo "eq-locale-setup: keyboard layouts detected: $LAYOUTS" >&2
+            # Try each layout, prefer non-us
+            IFS=',' read -ra LAYOUT_ARR <<< "$LAYOUTS"
+            for layout in "${LAYOUT_ARR[@]}"; do
+                layout=$(echo "$layout" | tr -d ' ')
+                [ "$layout" = "us" ] && continue
+                DETECTED=$(keyboard_to_locale "$layout")
+                if [ -n "$DETECTED" ]; then
+                    echo "eq-locale-setup: inferred locale '$DETECTED' from keyboard layout '$layout'" >&2
+                    break
+                fi
+            done
+            # If all layouts are "us", check if there's only "us" → en_US
+            if [ -z "$DETECTED" ]; then
+                echo "eq-locale-setup: only US keyboard layout found" >&2
+            fi
+        fi
+    fi
+
+    # ── Step 4: Final fallback ────────────────────────────────────
+    if [ -z "$DETECTED" ]; then
+        DETECTED="en_US.UTF-8"
+        echo "eq-locale-setup: using fallback locale '$DETECTED'" >&2
+    fi
+
+    LANG="$DETECTED"
+    echo "LANG=$LANG" > "$LOCALE_CONF"
+    echo "eq-locale-setup: wrote LANG=$LANG to $LOCALE_CONF" >&2
 fi
 
+# ── Generate the locale ──────────────────────────────────────────
 echo "eq-locale-setup: configuring locale '$LANG'"
 
 if [ -f "$LOCALE_GEN" ]; then
-    # Strip charset suffix to match both "ru_RU.UTF-8 UTF-8" and "ru_RU.UTF-8"
     BASE="${LANG%%.*}"
-    # Uncomment the locale line in locale.gen if it is commented out
+    # Uncomment the locale line
     sed -i "s|^#\(${BASE}\.[A-Za-z0-9@_-]* .*\)|\1|" "$LOCALE_GEN"
     sed -i "s|^#\(${BASE}\.[A-Za-z0-9@_-]*$\)|\1|" "$LOCALE_GEN"
-    # Always ensure en_US.UTF-8 is generated — required by Steam, Proton, and many runtimes
+    # Always ensure en_US.UTF-8 — required by Steam, Proton, many runtimes
     sed -i "s|^#\(en_US\.UTF-8.*\)|\1|" "$LOCALE_GEN"
-    echo "eq-locale-setup: locale.gen updated"
-else
-    echo "eq-locale-setup: $LOCALE_GEN not found, will let locale-gen handle it" >&2
+    echo "eq-locale-setup: locale.gen updated" >&2
 fi
 
 locale-gen

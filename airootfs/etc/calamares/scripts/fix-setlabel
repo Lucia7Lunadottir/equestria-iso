@@ -1,0 +1,14 @@
+#!/bin/sh
+# Renames root partition label to "Equestria OS"
+# Called from Calamares shellprocess (moved here to avoid $-variable conflicts)
+
+DEV=$(findmnt -n -o SOURCE /)
+FSTYPE=$(findmnt -n -o FSTYPE /)
+
+case "$FSTYPE" in
+    ext4|ext3|ext2) e2label "$DEV" "Equestria OS" ;;
+    btrfs)          btrfs filesystem label / "Equestria OS" ;;
+    xfs)            xfs_admin -L "Equestria OS" "$DEV" ;;
+esac
+
+exit 0
