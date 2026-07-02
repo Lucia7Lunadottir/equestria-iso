@@ -125,7 +125,10 @@ vulkan-intel
 # nvidia-utils (590+) is pre-installed for Turing+ majority.
 # For Pascal/Maxwell, pg-gpu-sync replaces it with equestria-nvidia-580xx-utils.
 nvidia-utils
+nvidia-settings
 egl-wayland
+egl-gbm
+egl-x11
 xorg-xwayland
 qt6-wayland
 
