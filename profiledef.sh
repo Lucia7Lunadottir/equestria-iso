@@ -25,7 +25,6 @@ file_permissions=(
   ["/usr/local/bin/livecd-sound"]="0:0:755"
   ["/usr/local/bin/eq-liveuser-setup"]="0:0:755"
   ["/usr/local/bin/install-equestria.sh"]="0:0:755"
-  ["/usr/bin/yay"]="0:0:755"
   ["/usr/local/bin/eq-locale-setup"]="0:0:755"
   ["/etc/profile.d/setup-flathub.sh"]="0:0:755"
   ["/etc/calamares/scripts/remove-ucode"]="0:0:755"
@@ -33,6 +32,4 @@ file_permissions=(
   ["/usr/local/bin/ensure-pacman-keyring"]="0:0:755"
   ["/etc/calamares/scripts/90-mkinitcpio-install.hook"]="0:0:644"
   ["/usr/local/bin/equestria-wifi-unblock.sh"]="0:0:755"
-  ["/usr/bin/equestria-os-tutorial"]="0:0:755"
-  ["/usr/bin/equestria-os-welcome"]="0:0:755"
 )
