@@ -3,7 +3,7 @@ ColorScheme=Rarity
 Font=Noto Mono,11,-1,5,50,0,0,0,0,0
 
 [General]
-Command=bash --rcfile ~/.local/share/konsole/Rarity.bashrc
+Command=/bin/bash -c "exec /bin/bash --rcfile $HOME/.local/share/konsole/Rarity.bashrc"
 Name=Rarity
 Parent=FALLBACK/
 TerminalColumns=120

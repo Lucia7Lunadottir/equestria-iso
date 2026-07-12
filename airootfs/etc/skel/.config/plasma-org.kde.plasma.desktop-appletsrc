@@ -77,11 +77,6 @@ showTemperatureInCompactMode=true
 DialogHeight=630
 DialogWidth=810
 
-[Containments][2][Applets][34][Configuration][WeatherStation]
-placeDisplayName=Batumi, Georgia, GE
-placeInfo=Batumi, Georgia, GE|615532
-provider=bbcukmet
-
 [Containments][2][Applets][38]
 immutability=1
 plugin=org.kde.plasma.activitypager
@@ -104,7 +99,16 @@ popupWidth=156
 
 [Containments][2][Applets][44][Configuration][Appearance]
 chartFace=org.kde.ksysguard.piechart
-title=Использование памяти
+Title=Memory Usage
+Title[de]=Speicherauslastung
+Title[es]=Uso de la memoria
+Title[fr]=Utilisation de la mémoire
+Title[ja]=メモリ使用量
+Title[pl]=Użycie pamięci
+Title[pt]=Utilização da memória
+Title[ru]=Использование памяти
+Title[uk]=Використання пам'яті
+Title[zh_CN]=内存使用
 
 [Containments][2][Applets][44][Configuration][ConfigDialog]
 DialogHeight=630
@@ -227,7 +231,7 @@ DialogWidth=810
 
 [Containments][2][Applets][7][General]
 extraItems=org.kde.plasma.manage-inputmethod,org.kde.plasma.keyboardlayout,org.kde.plasma.cameraindicator,org.kde.plasma.devicenotifier,org.kde.plasma.volume,org.kde.plasma.battery,org.kde.plasma.keyboardindicator,org.kde.kscreen,org.kde.plasma.brightness,org.kde.plasma.mediacontroller,org.kde.plasma.weather,org.kde.plasma.printmanager,org.kde.plasma.networkmanagement,org.kde.plasma.clipboard,org.kde.plasma.bluetooth,org.kde.plasma.notifications
-hiddenItems=toolbox,org.kde.plasma.clipboard,ROG Control Center,org.kde.plasma.bluetooth
+hiddenItems=toolbox,org.kde.plasma.clipboard,org.kde.plasma.bluetooth
 iconSpacing=1
 knownItems=org.kde.plasma.clipboard,org.kde.plasma.manage-inputmethod,org.kde.plasma.keyboardlayout,org.kde.plasma.cameraindicator,org.kde.plasma.bluetooth,org.kde.plasma.devicenotifier,org.kde.plasma.volume,org.kde.plasma.battery,org.kde.plasma.keyboardindicator,org.kde.kscreen,org.kde.plasma.brightness,org.kde.plasma.notifications,org.kde.plasma.mediacontroller,org.kde.plasma.weather,org.kde.plasma.printmanager,org.kde.plasma.networkmanagement
 scaleIconsToFit=true
@@ -251,5 +255,5 @@ wallpaperplugin=org.kde.image
 Image=file:///usr/share/wallpapers/EquestriaOS/default.png
 
 [ScreenMapping]
-itemsOnDisabledScreens=0,aa3ee513-3ab5-4295-a6e4-859c0b440faf,3,desktop:/steam.desktop,desktop:/Blender.desktop,desktop:/Krita.desktop
-screenMapping=desktop:/Blender.desktop,0,4b046974-9245-4e11-94d1-949463fd79d0,desktop:/com.jetpackduba.Gitnuro.desktop,0,4b046974-9245-4e11-94d1-949463fd79d0,desktop:/audacity.desktop,0,4b046974-9245-4e11-94d1-949463fd79d0,desktop:/SideQuest.desktop,0,4b046974-9245-4e11-94d1-949463fd79d0,desktop:/Krita.desktop,0,4b046974-9245-4e11-94d1-949463fd79d0,desktop:/unityhub.desktop,0,4b046974-9245-4e11-94d1-949463fd79d0,desktop:/install-equestria.desktop,0,6d8b1fb8-0061-4b61-98e9-21ba098100bf,desktop:/steam.desktop,0,4b046974-9245-4e11-94d1-949463fd79d0
+itemsOnDisabledScreens=
+screenMapping=desktop:/install-equestria.desktop,0,6d8b1fb8-0061-4b61-98e9-21ba098100bf

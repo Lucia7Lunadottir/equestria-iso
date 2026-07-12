@@ -3,7 +3,7 @@ ColorScheme=SunsetShimmer
 Font=Noto Mono,11,-1,5,50,0,0,0,0,0
 
 [General]
-Command=bash --rcfile ~/.local/share/konsole/SunsetShimmer.bashrc
+Command=/bin/bash -c "exec /bin/bash --rcfile $HOME/.local/share/konsole/SunsetShimmer.bashrc"
 Name=SunsetShimmer
 Parent=FALLBACK/
 TerminalColumns=120

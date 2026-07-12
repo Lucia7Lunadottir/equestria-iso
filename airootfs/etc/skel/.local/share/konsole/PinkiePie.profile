@@ -3,7 +3,7 @@ ColorScheme=PinkiePie
 Font=Noto Mono,11,-1,5,50,0,0,0,0,0
 
 [General]
-Command=bash --rcfile ~/.local/share/konsole/PinkiePie.bashrc
+Command=/bin/bash -c "exec /bin/bash --rcfile $HOME/.local/share/konsole/PinkiePie.bashrc"
 Name=PinkiePie
 Parent=FALLBACK/
 TerminalColumns=120

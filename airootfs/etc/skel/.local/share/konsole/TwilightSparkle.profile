@@ -3,7 +3,7 @@ ColorScheme=TwilightSparkle
 Font=Noto Mono,11,-1,5,50,0,0,0,0,0
 
 [General]
-Command=bash --rcfile ~/.local/share/konsole/TwilightSparkle.bashrc
+Command=/bin/bash -c "exec /bin/bash --rcfile $HOME/.local/share/konsole/TwilightSparkle.bashrc"
 Name=TwilightSparkle
 Parent=FALLBACK/
 TerminalColumns=120
