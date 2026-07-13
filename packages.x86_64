@@ -34,6 +34,13 @@ git
 
 glib-networking
 kdenetwork-filesharing
+# Сетевые диски: smb://, sftp:// и «Сеть» в Dolphin + реальное
+# монтирование SMB/NFS-шар (cifs-utils тянет mount.cifs)
+kio-extras
+cifs-utils
+nfs-utils
+davfs2
+sshfs
 networkmanager-openconnect
 networkmanager-openvpn
 networkmanager-qt
@@ -202,6 +209,18 @@ equestria-installer
 filelight
 mkinitcpio-archiso
 firefox
+# Языковые пакеты Firefox — все поддерживаемые языки системы;
+# Firefox сам включает нужный по локали пользователя
+firefox-i18n-de
+firefox-i18n-es-es
+firefox-i18n-fr
+firefox-i18n-ja
+firefox-i18n-pl
+firefox-i18n-pt-br
+firefox-i18n-pt-pt
+firefox-i18n-ru
+firefox-i18n-uk
+firefox-i18n-zh-cn
 fastfetch
 imagemagick
 chafa

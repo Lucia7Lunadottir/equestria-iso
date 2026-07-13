@@ -1,7 +1,15 @@
 [Desktop Entry]
 Type=Application
 Name=Install Equestria OS
+Name[de]=Equestria OS installieren
+Name[es]=Instalar Equestria OS
+Name[fr]=Installer Equestria OS
+Name[ja]=Equestria OS をインストール
+Name[pl]=Zainstaluj Equestria OS
+Name[pt]=Instalar o Equestria OS
 Name[ru]=Установить Equestria OS
+Name[uk]=Встановити Equestria OS
+Name[zh_CN]=安装 Equestria OS
 Exec=sudo /usr/local/bin/install-equestria.sh
 Icon=calamares
 Terminal=false
