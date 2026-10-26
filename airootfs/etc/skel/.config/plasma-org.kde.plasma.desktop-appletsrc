@@ -15,19 +15,7 @@ wallpaperplugin=org.kde.image
 
 [Containments][2][Applets][21]
 immutability=1
-plugin=org.kde.plasma.digitalclock
-
-[Containments][2][Applets][21][Configuration]
-popupHeight=451
-popupWidth=810
-
-[Containments][2][Applets][21][Configuration][Appearance]
-enabledCalendarPlugins=h,o,l,i,d,a,y,s,e,v,e,n,t,s,
-fontWeight=400
-
-[Containments][2][Applets][21][Configuration][ConfigDialog]
-DialogHeight=630
-DialogWidth=810
+plugin=org.equestria.clockwidget
 
 [Containments][2][Applets][22]
 immutability=1
