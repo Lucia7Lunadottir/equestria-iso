@@ -1,5 +1,46 @@
 # equestria-iso
 
+## 🌟 What's New in this Release (2026.10.27)
+Everything that changed since the previous ISO (2026.07.15).
+
+New Equestria apps (all in 10 languages, all follow your character theme):
+1. GPU Manager: shows your graphics cards and recommends and installs the right driver.
+2. Clock: alarms, timer and stopwatch; keeps working from the system tray.
+3. Calendar: moon phases, reminders with repeats, month/week/year views.
+4. Notes: notes with images and to-do checkboxes.
+5. Calculator, Screen Recorder, Color Picker.
+6. Audio/Video Converter: 17 audio formats, trimming, fades, speed, volume, tags, WebM/MKV.
+7. Closer: closes frozen windows.
+8. Clock and Calendar now open their existing window instead of starting a second copy.
+
+Panel and appearance:
+1. New panel clock: calendar with week numbers, Equestria Calendar events, other time zones.
+2. Day and night themes: KDE switches between light and dark automatically (Auto / Light / Dark in the Character Theme).
+3. Character themes now apply to every Equestria app, with new palettes for each character.
+4. One cursor theme for the whole system (Vimix); native Plasma lock and logout screens.
+
+Settings:
+1. New "Sound" section: output and input devices, volume up to 150%, sound card profiles, microphone boost, and a diagnostics page with one-click fixes.
+2. Screen brightness settings for the monitor and the graphics card.
+3. Graphics card section: drivers, video memory usage, and optional warnings when RAM or video memory runs low.
+4. Report a problem or suggest an idea straight from the settings.
+
+Stability:
+1. The panel and desktop restart automatically when they freeze, crash, or stop drawing because video memory ran out.
+2. Optional automatic recovery from the black screen on NVIDIA (Settings → Graphics card).
+3. The GPU driver is no longer replaced at boot when it was installed without DKMS.
+4. Fixed notifications, Wi-Fi settings, and swap on btrfs.
+
+Software Center and installing apps:
+1. Install apps from .deb and .rpm files.
+2. "Update" in an app's card now updates only that app.
+3. Light Image (photo catalog) is available in the Software Center.
+4. App menus refresh right after installing an app.
+
+Other:
+1. Image Finish 2.2.3: PSD files, Photoshop-like pen and text tools.
+2. Proton exe Starter is more stable.
+3. Installer: the installed system now also boots on computers that do not remember UEFI boot entries.
 
 ## 🌟 What's New in this Release (2026.07.15)
 1. The Software Center has been improved. Bugs preventing downloading packages from the list of basic programs have been fixed.
