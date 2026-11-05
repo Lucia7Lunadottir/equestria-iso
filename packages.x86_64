@@ -106,7 +106,10 @@ kinfocenter
 flatpak
 packagekit-qt6
 plasma-systemmonitor
-kcalc
+noto-fonts
+noto-fonts-cjk
+noto-fonts-emoji
+noto-fonts-extra
 
 # ── Audio ─────────────────────────────────────────────────────
 pipewire

@@ -1,6 +1,33 @@
 # equestria-iso
 
-## 🌟 What's New in this Release (2026.10.27)
+## 🌟 What's New in this Release (2026.11.05)
+Everything that changed since the previous ISO (2026.10.28).
+
+Languages:
+1. All Equestria apps now also speak Traditional Chinese and Korean — 12 languages in total.
+2. Noto fonts for Chinese, Japanese, Korean and emoji are installed out of the box.
+
+Software Center:
+1. Fixed installing and launching Flatpak apps.
+2. Simpler layout: one navigation list, maintenance actions in a single menu, an "Installed" badge on apps, and colors that follow your character theme.
+3. The Updates tab shows new updates right away, and a "Refresh" button sits next to "Update System".
+4. Apps installed from .deb and .rpm files can now be updated and removed.
+5. The Equestria Unreal launcher (Unreal Engine, projects, Fab plugins) is available under Game Development.
+
+App installer 2.0:
+1. A step-by-step wizard, like on Windows, in your character theme.
+
+Panel and appearance:
+1. The panel changer has been rewritten: panel styles now switch between day and night together with the rest of KDE.
+2. Fixed colors of the lock and logout screens.
+3. Choosing a character theme also changes the panel style; themes created by older versions are refreshed automatically.
+4. The Equestria Calculator has its own icon and replaces KCalc.
+
+Save Point 1.6 (Btrfs):
+1. Automatic rollback only happens when the system fails to reach the login screen 3 times in a row. It restores the last restore point from before the problem, never loops, and tells you about it at login.
+2. Restarting soon after logging in (for example, after changing a setting) is no longer counted as a failed boot.
+
+## 🌟 What's New in this Release (2026.10.28)
 Everything that changed since the previous ISO (2026.07.15).
 
 New Equestria apps (all in 10 languages, all follow your character theme):
