@@ -128,3 +128,9 @@ Installer:
 
 * **Updated System Packages:** All core components and pre-installed software have been updated to the latest available versions from the Arch Linux repositories.
 * **Improved Boot Screen (Plymouth):** The boot animation now works properly and seamlessly displays the motherboard's vendor logo during system startup.
+
+## ⚖️ License & Legal
+
+Copyright © 2026 Lucia Lunadottir (Psyche Games). The code in this repository is licensed under the [GNU General Public License v3.0 or later](LICENSE). The Equestria OS name, logo and branding are not covered by the GPL, and the artwork belongs to its respective artists — see [TRADEMARKS.md](TRADEMARKS.md). Want to help? See [CONTRIBUTING.md](CONTRIBUTING.md).
+
+Equestria OS is an independent, fan-created Linux distribution. It is not affiliated with, endorsed by, or sponsored by Hasbro. "My Little Pony" and "Equestria Girls" are registered trademarks of Hasbro.
