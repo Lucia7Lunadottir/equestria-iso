@@ -5,9 +5,10 @@ if [ ! -t 0 ]; then
     exit 0
 fi
 
+WORK_DIR=/var/tmp/equestria-work
 
-for m in $(tac /proc/mounts | grep "equestria-iso/work" | awk '{print $2}'); do
+for m in $(tac /proc/mounts | grep "$WORK_DIR" | awk '{print $2}'); do
     sudo umount -f -l "$m"
 done
 
-sudo rm -rf "/tmp/equestria-work"
+sudo rm -rf "$WORK_DIR"
