@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Equestria OS Appearance: default theme
+Comment=Applies the default Appearance theme (Canterlot) once, for a new user
+Exec=equestria-os-character-theme --first-login
+OnlyShowIn=KDE;
+NoDisplay=true
+X-KDE-Autostart-Phase=2
