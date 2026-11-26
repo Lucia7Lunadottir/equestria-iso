@@ -1,0 +1,18 @@
+[Desktop Entry]
+Type=Application
+Name=System Recovery
+Name[de]=Systemwiederherstellung
+Name[es]=Recuperación del sistema
+Name[fr]=Récupération du système
+Name[ja]=システムの回復
+Name[ko]=시스템 복구
+Name[pl]=Odzyskiwanie systemu
+Name[pt]=Recuperação do sistema
+Name[ru]=Восстановление системы
+Name[uk]=Відновлення системи
+Name[zh]=系统恢复
+Name[zh_TW]=系統復原
+Exec=equestria-recovery --wizard
+Icon=equestria-os-recovery
+Terminal=false
+Categories=System;

@@ -28,6 +28,7 @@ file_permissions=(
   # Исполняемый бит ярлыку установщика: без него запуск зависит от
   # диалога доверия Plasma («файл не помечен как исполняемый»)
   ["/etc/skel/Desktop/install-equestria.desktop"]="0:0:755"
+  ["/etc/skel/Desktop/equestria-recovery.desktop"]="0:0:755"
   ["/usr/local/bin/eq-locale-setup"]="0:0:755"
   ["/etc/profile.d/setup-flathub.sh"]="0:0:755"
   ["/etc/calamares/scripts/remove-ucode"]="0:0:755"
